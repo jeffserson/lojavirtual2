@@ -11,6 +11,7 @@
         <class>org.lojavirtual.Produto</class>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>
+                
         		<property name="hibernate.cache.infinispan.entity.expiration.lifespan"
         				  value="900000"/>
         		<property name="hibernate.cache.infinispan.entity.expiration.max_idle"

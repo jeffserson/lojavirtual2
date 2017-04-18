@@ -2,6 +2,7 @@ package org.lojavirtual;
 
 import java.io.Serializable;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 @Entity
+@Cacheable
 public class Cliente implements Serializable {
    
 	private static final long serialVersionUID = 1L;

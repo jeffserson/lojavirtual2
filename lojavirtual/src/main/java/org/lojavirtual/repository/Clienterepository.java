@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import org.hibernate.annotations.QueryHints;
 import org.lojavirtual.Cliente;
 
 
@@ -31,8 +32,8 @@ public class Clienterepository implements Serializable  {
 	}
 	
 	public List<Cliente> todos() {
-		TypedQuery<Cliente> query  = manager.createQuery("from Cliente", Cliente.class);
-		return query.getResultList();
+		return manager.createQuery("from Cliente", Cliente.class)
+			    .setHint(QueryHints.CACHEABLE, true).getResultList();
 	}
 	
 }
