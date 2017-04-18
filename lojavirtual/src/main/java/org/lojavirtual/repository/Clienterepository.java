@@ -1,0 +1,38 @@
+package org.lojavirtual.repository;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import org.lojavirtual.Cliente;
+
+
+
+public class Clienterepository implements Serializable  {
+	
+	private static final long serialVersionUID = 1L;
+	@PersistenceContext
+	private EntityManager manager;
+    
+	public void excluircliente1(Cliente cliente){
+		
+		this.manager.remove(cliente);
+			
+}
+	public Cliente porid(Long id) {
+		return manager.find(Cliente.class, id);
+	}
+    
+	public void guardar(Cliente cliente){
+		 manager.merge(cliente);
+	}
+	
+	public List<Cliente> todos() {
+		TypedQuery<Cliente> query  = manager.createQuery("from Cliente", Cliente.class);
+		return query.getResultList();
+	}
+	
+}
