@@ -1,27 +1,43 @@
 package org.lojavirtual;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
-import org.omnifaces.util.Components.ForEach;
+import org.hibernate.validator.constraints.NotBlank;
+
 
 @Entity
-public class Produto {
+public class Produto implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@NotBlank
+	@Column(nullable = false, length = 20, unique = true)
 	private String codigo;
-	
+	@NotBlank
 	private String nome;
-	
+	@NotNull @Min(0) @Max(value = 9999, message = "tem um valor muito alto")
+	@Column(name="quantidade_estoque", nullable = false, length = 5)
 	private Integer quantidade;
-	
+	@Temporal(TemporalType.DATE)
 	private Date datacadastro;
+	@NotNull(message = "é obrigatório")
+	@Column(name="valor_unitario", nullable = false, precision = 10, scale = 2)
+	private BigDecimal valorUnitario;
 
 	public Long getId() {
 		return id;
@@ -61,6 +77,14 @@ public class Produto {
 
 	public void setDatacadastro(Date datacadastro) {
 		this.datacadastro = datacadastro;
+	}
+
+	public BigDecimal getValorUnitario() {
+		return valorUnitario;
+	}
+
+	public void setValorUnitario(BigDecimal valorUnitario) {
+		this.valorUnitario = valorUnitario;
 	}
 
 	@Override
