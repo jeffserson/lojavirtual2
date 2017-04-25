@@ -31,7 +31,7 @@ public class Produtorepository implements Serializable {
 	}
 	
 	public List<Produto> todos() {
-		return manager.createQuery("from Produto", Produto.class)
+		return manager.createQuery("from Produto order by nome", Produto.class)
 			    .setHint(QueryHints.CACHEABLE, true).getResultList();
 	}
 	public Produto porcodigo(String codigo) {

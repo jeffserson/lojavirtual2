@@ -28,9 +28,10 @@ public class Produtocontroller implements Serializable {
 		}
 	}
 	
-    public void salvar(){
+    public String salvar(){
     	this.produto = produtoservice.salvar(this.produto);
         FacesUtil.addInfoMessage("Produto salvo com sucesso");	
+        return "/produto/ProdutosCadastrados?faces-redirect=true";
     }
 
 	public Produto getProduto() {

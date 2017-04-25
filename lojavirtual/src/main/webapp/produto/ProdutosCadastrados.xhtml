@@ -20,13 +20,13 @@
 
 
                  
-				<p:column  headerText="Produto:" sortBy="#{produto.nome}" style="text-align: center;">
-					<h:outputText  value="#{produto.nome}"></h:outputText>
-				</p:column>
-				<p:column headerText="Codigo:" sortBy="#{produto.codigo}" style="text-align: center;">
+				
+				<p:column width="40"  headerText="#:" sortBy="#{produto.codigo}" style="text-align: center;">
 					<h:outputText value="#{produto.codigo}"></h:outputText>
 				</p:column>
-
+                <p:column  headerText="Produto:" sortBy="#{produto.nome}" style="text-align: center;">
+					<h:outputText  value="#{produto.nome}"></h:outputText>
+				</p:column>
 				<p:column headerText="Quantidade:"  sortBy="#{produto.quantidade}"  style="text-align: center;">
 					<h:outputText  value="#{produto.quantidade}"/>
 				</p:column>

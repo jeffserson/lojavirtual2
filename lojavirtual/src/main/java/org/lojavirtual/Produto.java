@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +20,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 
 @Entity
+@Cacheable
 public class Produto implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
