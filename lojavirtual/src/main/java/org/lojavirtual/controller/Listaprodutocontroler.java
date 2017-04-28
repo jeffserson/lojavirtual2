@@ -27,6 +27,8 @@ public class Listaprodutocontroler implements Serializable {
 	@Inject
 	private Produtorepository produtorepository;
 	
+	private String nome;
+	
 	public void excluirproduto(Produto produto) {
 		 this.produto = produto;
 		 produtoservico.exluirproduto(produto);
@@ -54,7 +56,17 @@ public class Listaprodutocontroler implements Serializable {
 		this.produtos = produtos;
 	}
 
-    
+    public void pesquisarproduto() {
+		this.produtos  = this.produtorepository.porNomeSemelhante(nome);
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	
    
 }

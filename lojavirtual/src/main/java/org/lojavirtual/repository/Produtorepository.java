@@ -7,9 +7,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
+
+
 import org.hibernate.annotations.QueryHints;
 
 import org.lojavirtual.Produto;
+
+
+
 
 public class Produtorepository implements Serializable {
 
@@ -33,7 +38,14 @@ public class Produtorepository implements Serializable {
 	public List<Produto> todos() {
 		return manager.createQuery("from Produto order by nome", Produto.class)
 			    .setHint(QueryHints.CACHEABLE, true).getResultList();
+	} 
+	
+	public List<Produto> porNomeSemelhante(String nome) {
+		return manager.createQuery("from Produto where nome like :nome", Produto.class)
+				.setParameter("nome", "%" + nome + "%")
+				.getResultList();
 	}
+	
 	public Produto porcodigo(String codigo) {
 		try {
 			return manager.createQuery("from Produto where upper(codigo) = :codigo", Produto.class)

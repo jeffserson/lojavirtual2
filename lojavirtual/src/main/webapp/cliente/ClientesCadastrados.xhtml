@@ -16,21 +16,21 @@
 			</f:metadata>
 			<p:dataTable value="#{listaclientecontroler.clientes}"
 				emptyMessage="Nenhum Cliente Cadastrado" var="cliente"
-				paginator="true" rows="10" paginatorPosition="bottom">
+				paginator="true"  rows="10" paginatorPosition="bottom">
 
 				<p:column headerText="#:" width="40">
 					<h:outputText value="#{cliente.id}"></h:outputText>
 				</p:column>
 
 
-				<p:column headerText="Cliente:" sortBy="#{cliente.nome}">
+				<p:column headerText="Cliente:" sortBy="#{cliente.nome}" style="text-align: center;">
 					<h:outputText value="#{cliente.nome}"></h:outputText>
 				</p:column>
-				<p:column headerText="Endereço:" sortBy="#{cliente.endereço}">
+				<p:column headerText="Endereço:" sortBy="#{cliente.endereço}" style="text-align: center;">
 					<h:outputText value="#{cliente.endereço}"></h:outputText>
 				</p:column>
 
-				<p:column headerText="Email:" sortBy="#{cliente.email}">
+				<p:column headerText="Email:" sortBy="#{cliente.email}" style="text-align: center;">
 					<h:outputText value="#{cliente.email}"></h:outputText>
 				</p:column>
 

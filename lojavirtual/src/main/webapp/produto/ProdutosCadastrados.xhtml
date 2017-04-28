@@ -14,6 +14,16 @@
 			<f:metadata>
 				<f:viewAction action="#{listaprodutocontroler.consultarproduto}" />
 			</f:metadata>
+			
+			<div  style="margin-top: 5px; margin-bottom: 20px">
+    		<p:inputText   id="nome" size="40" value="#{listaprodutocontroler.nome}"  placeholder="Nome do Produto">
+    		</p:inputText>
+    		<p:spacer width="10px"/>
+    		<p:commandButton value="Pesquisar"  action="#{listaprodutocontroler.pesquisarproduto}"  update="@form"/>
+    	    </div>
+			
+			
+			
 			<p:dataTable value="#{listaprodutocontroler.produtos}"
 				emptyMessage="Nenhum Poduto Cadastrado" var="produto"
 				paginator="true" rows="10" paginatorPosition="bottom">
