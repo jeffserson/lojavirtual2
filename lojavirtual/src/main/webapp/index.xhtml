@@ -14,13 +14,13 @@
 	<h:form id="frm">
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputLabel for="usuario" value="Usuario:" />
-            <p:inputText id="usuario" value="#{}" required="true" label="usuario" />
+            <p:inputText id="usuario" value="#{logincontroler.login.usuario}" required="true" label="usuario" />
  
             <h:outputLabel for="senha" value="Senha:" />
-            <p:password id="senha" value="#{}" required="true" label="senha" />
+            <p:password id="senha" value="#{logincontroler.login.senha}" required="true" label="senha" />
  
             <f:facet name="footer">
-                <p:commandButton value="Login" update="growl" actionListener="#{}"
+                <p:commandButton value="Login" update="growl" actionListener="#{logincontroler.logar}"
                                  oncomplete="handleLoginRequest(xhr, status, args)" />
             </f:facet>  
         </h:panelGrid>
