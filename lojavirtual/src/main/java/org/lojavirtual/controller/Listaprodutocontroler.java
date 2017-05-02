@@ -3,16 +3,12 @@ package org.lojavirtual.controller;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.enterprise.context.SessionScoped;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.lojavirtual.Cliente;
 import org.lojavirtual.Produto;
-import org.lojavirtual.repository.Clienterepository;
 import org.lojavirtual.repository.Produtorepository;
-import org.lojavirtual.service.ClienteService;
 import org.lojavirtual.service.Produtoservice;
 import org.lojavirtual.util.FacesUtil;
 @Named

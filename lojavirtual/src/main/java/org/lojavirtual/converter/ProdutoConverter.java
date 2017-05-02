@@ -6,9 +6,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 
-import org.lojavirtual.Cliente;
 import org.lojavirtual.Produto;
-import org.lojavirtual.repository.Clienterepository;
 import org.lojavirtual.repository.Produtorepository;
 
 

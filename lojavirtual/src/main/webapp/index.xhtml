@@ -1,17 +1,34 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:o="http://omnifaces.org/ui"
-	template="/WEB-INF/templates/Layout.xhtml">
-    <ui:define name="content">
-		<h1 class="aw-page-title"></h1>
-		
-     <p:tabView >
-       <p:tab title="Login" >
-       
-	<h:form id="frm">
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+
+	<title>Comercio online</title>
+	
+</h:head>
+
+<h:body>	
+			<br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+		<div style="background: #1e94d2;
+			height: 100%;
+  			min-height: 100%;
+  			display: -webkit-flex;
+  			display: flex;
+  			-webkit-align-items: center;
+  			align-items: center;
+  			-webkit-justify-content: center;
+  			justify-content: center;
+  			padding: 40px;
+  border: 1px solid rgba(0, 0, 0, .3)">
+		<h:form id="frm" >
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputLabel for="usuario" value="Usuario:" />
             <p:inputText id="usuario" value="#{logincontroler.login.usuario}" required="true" label="usuario" />
@@ -20,12 +37,10 @@
             <p:password id="senha" value="#{logincontroler.login.senha}" required="true" label="senha" />
  
             <f:facet name="footer">
-                <p:commandButton value="Login" update="growl" actionListener="#{logincontroler.logar}"
-                                 oncomplete="handleLoginRequest(xhr, status, args)" />
+                <p:commandButton value="Login" />
             </f:facet>  
         </h:panelGrid>
 	</h:form>
-	  </p:tab> 
-	 </p:tabView>
-</ui:define>
-</ui:composition>
+</div>
+</h:body>
+</html>

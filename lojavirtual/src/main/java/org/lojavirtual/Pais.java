@@ -2,7 +2,6 @@ package org.lojavirtual;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
 
 public class Pais implements Serializable {
 
@@ -50,12 +49,4 @@ public class Pais implements Serializable {
 			return false;
 		return true;
 	}
-
-    
-	
-	
-	
-	
-	
-	
 }

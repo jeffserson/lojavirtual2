@@ -5,10 +5,8 @@ import java.io.Serializable;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
-import org.lojavirtual.Cliente;
 import org.lojavirtual.Produto;
 import org.lojavirtual.repository.Produtorepository;
-import org.lojavirtual.util.FacesUtil;
 
 public class Produtoservice implements Serializable {
 

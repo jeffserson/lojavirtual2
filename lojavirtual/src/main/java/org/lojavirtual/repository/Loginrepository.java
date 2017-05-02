@@ -17,6 +17,7 @@ public class Loginrepository implements Serializable {
 	public void logar(Login cliente){
 		
 		
+		
 			
 }
 

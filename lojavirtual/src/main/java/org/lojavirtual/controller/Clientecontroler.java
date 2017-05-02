@@ -1,23 +1,12 @@
 package org.lojavirtual.controller;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Init;
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.transaction.Transactional;
-
 import org.lojavirtual.Cliente;
-import org.lojavirtual.repository.Clienterepository;
 import org.lojavirtual.service.ClienteService;
 import org.lojavirtual.util.FacesUtil;
-import org.omnifaces.cdi.ViewScoped;
 
 
 
