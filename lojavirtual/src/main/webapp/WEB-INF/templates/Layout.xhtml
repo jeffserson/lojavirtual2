@@ -31,6 +31,11 @@
             <p:menuitem value="Novo" outcome="/cliente/CadastroCliente"/>
             <p:separator />
             <p:menuitem value="Consultar" outcome="/cliente/ClientesCadastrados" />
+   </p:submenu>
+        <p:submenu label="Produtos" icon="ui-icon-document">
+            <p:menuitem value="Novo" outcome="/produto/CadastroProduto"/>
+            <p:separator />
+            <p:menuitem value="Consultar" outcome="/produto/ProdutosCadastrados" />
         </p:submenu>
        
         <f:facet name="options">
@@ -39,6 +44,7 @@
             <p:commandButton type="button" value="Sair" icon="ui-icon-extlink" />
         </f:facet>
     </p:menubar>
+    
 </h:form>
 	</header>
 	
