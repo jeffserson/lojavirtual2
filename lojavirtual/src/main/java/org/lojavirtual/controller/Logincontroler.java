@@ -1,33 +1,57 @@
 package org.lojavirtual.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.lojavirtual.Login;
-import org.lojavirtual.service.Loginservice;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.subject.Subject;
+import org.apache.xalan.xsltc.dom.ExtendedSAX;
+import org.lojavirtual.Grupo;
+import org.lojavirtual.Usuario;
+import org.lojavirtual.repository.Usuariorepository;
+import org.lojavirtual.util.FacesUtil;
 
 @Named
-@javax.faces.view.ViewScoped
-public class Logincontroler implements Serializable {
+@SessionScoped
+public class Logincontroler implements Serializable   {
     
+	
 	private static final long serialVersionUID = 1L;
-	
-	private Login login;
-	@Inject
-	private Loginservice service;
-	
-	public void logar(Login login){
-		this.service.login(login);
+	private Usuario usuario  = new Usuario();
+	 @Inject
+	 private Subject user;
+     @Inject
+     private FacesContext context;
+     @Inject
+	 private Usuariorepository usuariorepository;
+     private List<Grupo> grupos; 
+     
+	public Usuario getUsuario() {
+		return usuario;
 	}
-
-	public Login getLogin() {
-		return login;
-	}
-
-	public void setLogin(Login login) {
-		this.login = login;
+	
+	public String efetuaLogin() {
+		 try { 
+		        UsernamePasswordToken token = new UsernamePasswordToken(usuario.getEmail(), usuario.getSenha());
+		        
+		        user.login(token);
+               
+		        return "/produto/ProdutosCadastrados.xhtml?faces-redirect=true";
+		    } catch(AuthenticationException e) {
+		                FacesUtil.addErrorMessage("Usuario nao encontrado");
+		        }
+		    return null;
+		
+		
 	}
 	
 }

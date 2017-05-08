@@ -9,6 +9,8 @@
         <jta-data-source>java:jboss/datasources/casadocodigoDS</jta-data-source>
         <class>org.lojavirtual.Cliente</class>
         <class>org.lojavirtual.Produto</class>
+        <class>org.lojavirtual.Usuario</class>
+        <class>org.lojavirtual.Grupo</class>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>
                 

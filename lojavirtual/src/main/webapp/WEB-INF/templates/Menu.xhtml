@@ -12,8 +12,8 @@
 		<p:submenu label="Menu">
 			<p:submenu label="Cadastros">
 			
-			<p:menuitem value="Cliente" outcome="/cliente/ClientesCadastrados" />
-			<p:menuitem value="Produto" outcome="/produto/ProdutosCadastrados" />
+			<p:menuitem value="Cliente" rendered="#{request.isUserInRole('VENDEDOR')}"  outcome="/cliente/ClientesCadastrados" />
+			<p:menuitem value="Produto"   outcome="/produto/ProdutosCadastrados" />
 			</p:submenu>
 			</p:submenu>
 			
