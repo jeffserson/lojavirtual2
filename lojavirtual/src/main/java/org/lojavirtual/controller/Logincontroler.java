@@ -1,5 +1,6 @@
 package org.lojavirtual.controller;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -54,7 +55,9 @@ public class Logincontroler implements Serializable   {
 		
 	}
 	
-	public String desLogar() {
-		return "index.xhtml?faces-redirect=true";
+	public void desLogar() throws IOException {
+		
+		context.getExternalContext().redirect("index.xhtml");
+		
 	}
 }
