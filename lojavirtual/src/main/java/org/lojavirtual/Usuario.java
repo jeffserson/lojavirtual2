@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -32,7 +33,7 @@ public class Usuario implements Serializable{
 	@NotBlank
 	private String senha;
 	@OneToOne
-	private Grupo grupo;
+	private Grupo grupo ;
 	
 	public Integer getId() {
 		return id;
@@ -75,13 +76,15 @@ public class Usuario implements Serializable{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 	public Grupo getGrupo() {
 		return grupo;
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
 	}
+	
+	
+	
 	
 	
 	

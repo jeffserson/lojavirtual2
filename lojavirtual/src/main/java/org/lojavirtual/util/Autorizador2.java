@@ -111,7 +111,7 @@ public class Autorizador2 extends SimpleAccountRealm {
 		   * ((SimpleAuthorizationInfo)info).setStringPermissions(permissions);
 		    
 		   */
-		  
+		   System.out.println(info.getRoles());
 		   return info;
 	   }
 	   public Usuariorepository getUsuariorepository() {
@@ -119,7 +119,7 @@ public class Autorizador2 extends SimpleAccountRealm {
 		        props.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
 		        try {
 		            InitialContext ctx = new InitialContext(props);
-		            Usuariorepository usuariorepository = (Usuariorepository) ctx.lookup("java:global/lojavirtual/Usuariorepository");
+		            Usuariorepository usuariorepository = (Usuariorepository) ctx.lookup("java:module/Usuariorepository");
 		            return usuariorepository;
 		        } catch(NamingException e) { 
 		            throw new RuntimeException(e.getMessage());

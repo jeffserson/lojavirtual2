@@ -2,12 +2,20 @@ package org.lojavirtual;
 
 import java.io.Serializable;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+<<<<<<< HEAD
 
 @Entity 
+=======
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+@Entity 
+@Cacheable
+>>>>>>> b8f6df8a965c7844c486f567e9117bebab8bb3f7
 public class Grupo implements Serializable{
 
 	
