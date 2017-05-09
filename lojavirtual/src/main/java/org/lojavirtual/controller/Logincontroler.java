@@ -54,4 +54,7 @@ public class Logincontroler implements Serializable   {
 		
 	}
 	
+	public String desLogar() {
+		return "index.xhtml?faces-redirect=true";
+	}
 }

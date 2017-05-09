@@ -2,17 +2,12 @@ package org.lojavirtual;
 
 import java.io.Serializable;
 
-<<<<<<< HEAD:lojavirtual/src/main/java/org/lojavirtual/Pais.java
-=======
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-@Entity 
->>>>>>> 59efd7b3e9491abac825425199d600c96bc6ac92:lojavirtual/src/main/java/org/lojavirtual/Grupo.java
 
+@Entity 
 public class Grupo implements Serializable{
 
 	
@@ -73,12 +68,9 @@ public class Grupo implements Serializable{
 			return false;
 		return true;
 	}
-<<<<<<< HEAD:lojavirtual/src/main/java/org/lojavirtual/Pais.java
-=======
 
 	@Override
 	public String toString() {
 		return "Grupo [nome=" + nome + "]";
 	}
->>>>>>> 59efd7b3e9491abac825425199d600c96bc6ac92:lojavirtual/src/main/java/org/lojavirtual/Grupo.java
 }
