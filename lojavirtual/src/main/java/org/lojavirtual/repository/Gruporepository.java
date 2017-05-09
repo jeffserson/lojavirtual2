@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 
+import org.hibernate.annotations.QueryHints;
 import org.lojavirtual.Grupo;
 
 @Stateless

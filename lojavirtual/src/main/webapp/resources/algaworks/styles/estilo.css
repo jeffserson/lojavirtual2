@@ -1,5 +1,5 @@
 #login-dialog {
-	background: #1e94d2;
+	        background: #1e94d2;
 			height: 100%;
   			min-height: 100%;
   			display: -webkit-flex;
@@ -9,7 +9,7 @@
   			-webkit-justify-content: center;
   			justify-content: center;
   			padding: 40px;
-  border: 1px solid rgba(0, 0, 0, .3)"
+            border: 1px solid rgba(0, 0, 0, .3)"
 }
 
 .grid-login {
