@@ -16,7 +16,7 @@
 	<h:outputStylesheet library="algaworks" name="styles/custom.css" />
 	<h:outputStylesheet library="algaworks" name="styles/layout.css" />
 	<h:outputStylesheet library="algaworks" name="styles/components.css" />
-	
+	<h:outputStylesheet library="algaworks" name="styles/estilo.css" />
 	<h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
 	<h:outputScript target="body" library="algaworks" name="javascripts/app.js" />
 </h:head>
@@ -24,27 +24,12 @@
 <h:body>
 	<header class="aw-topbar">	
 		<a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
-		<h:form>  
-    <p:menubar>
-        <p:submenu label="Clientes" icon="ui-icon-document">
-            <p:menuitem value="Novo" outcome="/cliente/CadastroCliente"/>
-            <p:separator />
-            <p:menuitem value="Consultar" outcome="/cliente/ClientesCadastrados" />
-   </p:submenu>
-        <p:submenu label="Produtos" icon="ui-icon-document">
-            <p:menuitem value="Novo" outcome="/produto/CadastroProduto"/>
-            <p:separator />
-            <p:menuitem value="Consultar" outcome="/produto/ProdutosCadastrados" />
-        </p:submenu>
-       
-        <f:facet name="options">
-            <h:outputLabel for="name" value="#{logincontroler.usuario.email}"/>
-            
-            <p:commandButton value="Sair" action="#{ogincontroler.deslogar}" icon="ui-icon-extlink" />
-        </f:facet>
-    </p:menubar>
-    
-</h:form>
+		 <div  style="float: right; margin-right: 100px">
+				<span class="menu"  style="float:  left; margin-top:5%;   font-size:5mm; color:white; height: 30px; line-height: 20px; margin-right: 10px">
+			      Olá #{logincontroler.usuario.email}!
+				</span>
+			</div>
+  
 	</header>
 	
 	<aside class="aw-sidebar  js-sidebar">

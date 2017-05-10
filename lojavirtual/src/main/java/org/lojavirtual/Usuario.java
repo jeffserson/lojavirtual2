@@ -27,7 +27,8 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+	@NotBlank
+	private String nome;
 	@NotBlank
 	private String email;
 	@NotBlank
@@ -81,6 +82,12 @@ public class Usuario implements Serializable{
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	

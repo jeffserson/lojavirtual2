@@ -12,11 +12,12 @@
 		<p:submenu label="Menu">
 			<p:submenu label="Cadastros">
 			
-			<p:menuitem value="Cliente" rendered="#{request.isUserInRole('VENDEDOR')}"  outcome="/cliente/ClientesCadastrados" />
+			<p:menuitem value="Cliente"   rendered="#{request.isUserInRole('VENDEDOR')}"  outcome="/cliente/ClientesCadastrados" />
 			<p:menuitem value="Produto"   outcome="/produto/ProdutosCadastrados" />
 			</p:submenu>
+			<p:menuitem   value="Sair" action="#{logincontroler.desLogar}"/>
 			</p:submenu>
-			
+			 
 		</p:menubar>
 		</div>
 		</nav>

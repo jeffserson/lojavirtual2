@@ -21,6 +21,8 @@ import org.lojavirtual.Usuario;
 import org.lojavirtual.repository.Usuariorepository;
 import org.lojavirtual.util.FacesUtil;
 
+
+
 @Named
 @SessionScoped
 public class Logincontroler implements Serializable   {
@@ -37,6 +39,8 @@ public class Logincontroler implements Serializable   {
      private List<Grupo> grupos; 
      
 	public Usuario getUsuario() {
+		
+		
 		return usuario;
 	}
 	
@@ -55,9 +59,13 @@ public class Logincontroler implements Serializable   {
 		
 	}
 	
-	public void desLogar() throws IOException {
+	public String desLogar() throws IOException {
 		
-		context.getExternalContext().redirect("index.xhtml");
-		
+		user.logout();
+		return "/index.xhtml?faces-redirect=true";
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }
