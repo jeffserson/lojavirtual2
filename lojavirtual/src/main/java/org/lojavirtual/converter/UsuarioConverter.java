@@ -25,7 +25,7 @@ public class UsuarioConverter implements Converter {
 		Usuario retorno = null;
 
 		if (value != null && !"".equals(value)) {
-			retorno = this.produtorepository.porid(new Long(value));
+			retorno = this.produtorepository.porid(new Integer(value));
 		}
 
 		return retorno;

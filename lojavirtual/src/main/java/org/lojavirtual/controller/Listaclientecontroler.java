@@ -23,6 +23,16 @@ public class Listaclientecontroler implements Serializable {
 	@Inject
 	private Clienterepository repositoryyc;
 	
+	private String nome;
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public void excluircliente2(Cliente cliente) {
 		 this.cliente = cliente;
 		 clienteservico.exluircliente(cliente);
@@ -46,9 +56,9 @@ public class Listaclientecontroler implements Serializable {
 	public List<Cliente> getClientes() {
 		return clientes;
 	}
-
-
-
+	public void pesquisarcliente() {
+		this.clientes  = this.repositoryyc.porNomeSemelhante(nome);
+	}
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}

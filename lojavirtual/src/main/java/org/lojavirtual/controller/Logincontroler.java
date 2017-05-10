@@ -21,8 +21,6 @@ import org.lojavirtual.Usuario;
 import org.lojavirtual.repository.Usuariorepository;
 import org.lojavirtual.util.FacesUtil;
 
-
-
 @Named
 @SessionScoped
 public class Logincontroler implements Serializable   {
@@ -55,8 +53,6 @@ public class Logincontroler implements Serializable   {
 		                FacesUtil.addErrorMessage("Usuario nao encontrado");
 		        }
 		    return null;
-		
-		
 	}
 	
 	public String desLogar() throws IOException {

@@ -1,6 +1,7 @@
 package org.lojavirtual.repository;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,7 +10,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.annotations.QueryHints;
-import org.lojavirtual.Cliente;
 import org.lojavirtual.Usuario;
 @Stateless 
 public class Usuariorepository implements Serializable {
@@ -19,9 +19,11 @@ public class Usuariorepository implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@PersistenceContext
 	private EntityManager manager;
-	public Usuario porid(Long id) {
-		return manager.find(Usuario.class, id);
+	
+	public Usuario porid(Integer integer) {
+		return manager.find(Usuario.class, integer);
 	}
+	
 	public Usuario logar(String email){
 		try {
 			TypedQuery<Usuario> query = manager.createQuery("select p from Usuario p  "+ 
@@ -34,12 +36,23 @@ public class Usuariorepository implements Serializable {
 		} catch (NoResultException e) {
 			// TODO: handle exception
 		}
-		return null;
-		  
-     
-		
-			
+		return null;	
 }
+	public void excluirusuario(Usuario usuario)
+	{
+		manager.remove(usuario);
+	}
 	
-
+	public Usuario guardar(Usuario usuario)
+	{
+		return manager.merge(usuario);
+	}
+	
+	public List<Usuario> todos(String nome)
+	{
+		return manager.createQuery("from Usuario where nome like :nome", Usuario.class)
+				.setParameter("nome", "%" + nome + "%")
+				.getResultList();
+	}
+	
 }

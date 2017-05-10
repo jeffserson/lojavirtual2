@@ -10,14 +10,17 @@
 		<div class="ui-fluid">
 		<p:menubar>  
 		<p:submenu label="Menu">
-			<p:submenu label="Cadastros">
-			
-			<p:menuitem value="Cliente"   rendered="#{request.isUserInRole('VENDEDOR')}"  outcome="/cliente/ClientesCadastrados" />
+			<p:submenu label="Consultas">
+			<p:menuitem value="Cliente"   outcome="/cliente/ClientesCadastrados" />
 			<p:menuitem value="Produto"   outcome="/produto/ProdutosCadastrados" />
 			</p:submenu>
-			<p:menuitem   value="Sair" action="#{logincontroler.desLogar}"/>
+			<p:submenu label="Cadastro">
+			<p:menuitem value="Cliente"   outcome="/cliente/CadastroCliente" />
+			<p:menuitem value="Produto"   outcome="/produto/CadastroProduto" />
 			</p:submenu>
-			 
+			
+			<p:menuitem   value="Sair" action="#{logincontroler.desLogar}"/>
+			</p:submenu>			 
 		</p:menubar>
 		</div>
 		</nav>
