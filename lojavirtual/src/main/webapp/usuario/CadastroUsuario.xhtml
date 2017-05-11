@@ -7,12 +7,13 @@
 
 
 	<ui:define name="content">
+	<h1 class="aw-page-title"></h1>
 		 <p:tabView >
        <p:tab title="Usuario" >
 	<h:form id="frm">
 	     <f:metadata>
-			 <o:viewParam name="id" value="#{}" />
-			 <f:viewAction action="#{}" /> 
+			 
+			 <f:viewAction action="#{usuariocontroler.preparausuario}" /> 
 			 </f:metadata>
 	            
             <p:messages  id="messages"  autoUpdate="true" closable="true" />
@@ -21,10 +22,23 @@
 					styleClass="panelgrid-noborder"
 					columnClasses="ui-grid-col-2, ui-grid-col-4, ui-grid-col-2, ui-grid-col-4">
 			<p:outputLabel value="Nome:" for="nome" />
-			<p:inputText styleClass="up" size="30" id="nome" value="#{}"/>
+			<p:inputText  size="30" id="nome" value="#{usuariocontroler.usuario.nome }"/>
 
-						
-			<p:commandButton value="salvar"  update="@form" action="#{}" />
+			<p:outputLabel value="Email:" for="email" />
+			<p:inputText  size="30" id="email" value="#{usuariocontroler.usuario.email }"/>
+			
+			<p:outputLabel value="Senha:" for="senha" />
+			<p:password styleClass="up" size="20" id="senha" value="#{usuariocontroler.usuario.senha }"/>	
+			
+			 <h:outputText value=" Tipo Usuario: "/>
+                    <p:selectOneMenu id="tipousuario"  value="#{usuariocontroler.usuario.grupo}" 
+                    editable="true" 
+                    filter="true" filterMatchMode="contains" converter="converter" required="true"  >
+                   <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                   <f:selectItems value="#{usuariocontroler.grupos}" var="grupo" 
+                    itemValue="#{grupo}" itemLabel="#{grupo.nome}"/> 
+                    </p:selectOneMenu>		
+			<p:commandButton value="salvar"  update="@form" action="#{usuariocontroler.salvar}" />
 		</p:panelGrid>
 	</h:form>
 	  </p:tab> 

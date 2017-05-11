@@ -11,6 +11,7 @@ import javax.persistence.TypedQuery;
 import org.hibernate.annotations.QueryHints;
 import org.lojavirtual.Cliente;
 import org.lojavirtual.Grupo;
+import org.lojavirtual.Produto;
 import org.lojavirtual.Usuario;
 @Stateless 
 public class Usuariorepository implements Serializable {
@@ -22,9 +23,20 @@ public class Usuariorepository implements Serializable {
 	@PersistenceContext
 	private EntityManager manager;
 	
+	
+	public void excluirusuario(Usuario usuario){
+		
+		this.manager.remove(usuario);
+			
+         }
+	
 	public Usuario porid(Long id) {
 		return manager.find(Usuario.class, id);
 	}
+	public Usuario guardar(Usuario usuario){
+		 return manager.merge(usuario);
+	}
+	 
 	public Usuario logar(String email){
 		try {
 			TypedQuery<Usuario> query = manager.createQuery("select p from Usuario p  "+ 
@@ -43,7 +55,14 @@ public class Usuariorepository implements Serializable {
 		
 			
 }
-	
-	
-
+	public Usuario poremail(String email) {
+		try {
+			return manager.createQuery("from Usuario where upper(email) = :email", Usuario.class)
+				.setParameter("email", email)
+				.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}	
+	}
 }
+
