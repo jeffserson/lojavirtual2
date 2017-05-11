@@ -35,4 +35,10 @@ public class Clienterepository implements Serializable  {
 			    .setHint(QueryHints.CACHEABLE, true).getResultList();
 	}
 	
+	public List<Cliente> porNomeSemelhante(String nome) {
+		return manager.createQuery("from Cliente where nome like :nome", Cliente.class)
+				.setParameter("nome", "%" + nome + "%")
+				.getResultList();
+	}
+	
 }

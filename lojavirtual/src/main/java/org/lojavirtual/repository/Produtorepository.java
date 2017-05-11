@@ -14,8 +14,6 @@ import org.hibernate.annotations.QueryHints;
 import org.lojavirtual.Produto;
 
 
-
-
 public class Produtorepository implements Serializable {
 
 	private static final long serialVersionUID = 1L;

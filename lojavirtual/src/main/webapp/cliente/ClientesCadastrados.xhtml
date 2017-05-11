@@ -14,26 +14,38 @@
 			<f:metadata>
 				<f:viewAction action="#{listaclientecontroler.consultarcliente}" />
 			</f:metadata>
+			
+			<div  style="margin-top: 5px; margin-bottom: 20px">
+    		<p:inputText   id="nome" size="40" value="#{listaclientecontroler.nome}"  placeholder="Nome do Cliente">
+    		</p:inputText>
+    		<p:spacer width="10px"/>
+    		<p:commandButton value="Pesquisar"  action="#{listaclientecontroler.pesquisarcliente}"  update="@form"/>
+    	    </div>
+			
+			
+			
 			<p:dataTable value="#{listaclientecontroler.clientes}"
 				emptyMessage="Nenhum Cliente Cadastrado" var="cliente"
-				paginator="true"  rows="10" paginatorPosition="bottom">
+				paginator="true" rows="10" paginatorPosition="bottom">
 
-				<p:column headerText="#:" width="40">
+
+                 
+				
+				<p:column width="40"  headerText="#:">
 					<h:outputText value="#{cliente.id}"></h:outputText>
 				</p:column>
-
-
-				<p:column headerText="Cliente:" sortBy="#{cliente.nome}" style="text-align: center;">
-					<h:outputText value="#{cliente.nome}"></h:outputText>
+                <p:column  headerText="Cliente:" sortBy="#{cliente.nome}">
+					<h:outputText  value="#{cliente.nome}"></h:outputText>
 				</p:column>
-				<p:column headerText="Endereço:" sortBy="#{cliente.endereço}" style="text-align: center;">
-					<h:outputText value="#{cliente.endereço}"></h:outputText>
+				<p:column headerText="Endereço:"  sortBy="#{cliente.endereço}"  style="text-align: center;">
+					<h:outputText  value="#{cliente.endereço}"></h:outputText>
 				</p:column>
-
-				<p:column headerText="Email:" sortBy="#{cliente.email}" style="text-align: center;">
-					<h:outputText value="#{cliente.email}"></h:outputText>
+                
+                <p:column headerText="Email:" sortBy="#{cliente.email}" style="text-align: center;">
+					<h:outputText value="#{cliente.email}">
+					</h:outputText>
 				</p:column>
-
+                
 				<p:column>
 
 					<p:button value="editar" icon="ui-icon-pencil" title="Editar"

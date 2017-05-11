@@ -21,8 +21,9 @@ public class Usuariorepository implements Serializable {
 	
 	@PersistenceContext
 	private EntityManager manager;
-	public Usuario porid(Long id) {
-		return manager.find(Usuario.class, id);
+	
+	public Usuario porid(Integer integer) {
+		return manager.find(Usuario.class, integer);
 	}
 	public Usuario logar(String email){
 		try {
