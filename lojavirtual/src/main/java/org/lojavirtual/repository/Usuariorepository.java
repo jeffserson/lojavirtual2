@@ -10,6 +10,7 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.annotations.QueryHints;
 import org.lojavirtual.Cliente;
+import org.lojavirtual.Grupo;
 import org.lojavirtual.Usuario;
 @Stateless 
 public class Usuariorepository implements Serializable {
@@ -17,6 +18,7 @@ public class Usuariorepository implements Serializable {
 
 
 	private static final long serialVersionUID = 1L;
+	
 	@PersistenceContext
 	private EntityManager manager;
 	public Usuario porid(Long id) {
@@ -40,6 +42,7 @@ public class Usuariorepository implements Serializable {
 		
 			
 }
+	
 	
 
 }
