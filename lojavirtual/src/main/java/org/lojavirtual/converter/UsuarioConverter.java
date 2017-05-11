@@ -13,7 +13,6 @@ import org.lojavirtual.repository.Clienterepository;
 import org.lojavirtual.repository.Produtorepository;
 import org.lojavirtual.repository.Usuariorepository;
 
-
 @FacesConverter(forClass = Usuario.class)
 public class UsuarioConverter implements Converter {
 

@@ -9,9 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+
+import org.lojavirtual.converter.BaseEntity;
 @Entity 
 @Cacheable
-public class Grupo implements Serializable{
+public class Grupo implements Serializable, BaseEntity{
 
 	
 	private static final long serialVersionUID = 1L;

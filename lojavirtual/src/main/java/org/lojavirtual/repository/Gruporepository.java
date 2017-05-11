@@ -38,6 +38,6 @@ public class Gruporepository implements Serializable {
 	
 
 	public List<Grupo> findAll() {
-		return this.em.createNamedQuery("Grupo.findAll", Grupo.class).getResultList();
+		return this.em.createQuery("from Grupo order by nome", Grupo.class).getResultList();
 	}
 }
